@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AppEventos</string>
+    <string name="titulo_app">IFRS Eventos</string>
+    <string name="ifrsLogo">Logo IFRS</string>
+    <string name="userNameHint">Usuário</string>
+    <string name="passwordHint">Senha</string>
+    <string name="login">Entrar</string>
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
+</resources>
