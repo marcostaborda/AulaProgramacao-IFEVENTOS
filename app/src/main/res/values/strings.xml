@@ -1,10 +1,15 @@
 <resources>
-    <string name="app_name">AppEventos</string>
+    <string name="app_name">IFRS Eventos</string>
     <string name="titulo_app">IFRS Eventos</string>
     <string name="ifrsLogo">Logo IFRS</string>
     <string name="userNameHint">Usuário</string>
     <string name="passwordHint">Senha</string>
     <string name="login">Entrar</string>
-    <item name="visible" type="id"/>
-    <item name="masked" type="id"/>
+    <string name="resgistre">Registrar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="voltar">Voltar</string>
+    <string name="tituloRegistrar">IFRS Eventos - Registrar </string>
+    <string name="tituloLogin">IFRS Eventos - Login </string>
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
 </resources>

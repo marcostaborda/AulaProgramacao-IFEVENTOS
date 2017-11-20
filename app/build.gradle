@@ -28,6 +28,7 @@ dependencies {
     implementation 'com.android.support:design:27.0.1'
     implementation 'com.android.support:cardview-v7:27.0.1'
     implementation 'com.android.support:recyclerview-v7:27.0.1'
+    implementation 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
 }
 // REQUIRED: Google's new Maven repo is required for the latest
 // support library that is compatible with Android 8.0
