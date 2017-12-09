@@ -22,7 +22,7 @@
             android:name=".RegisterLogin"
             android:label="@string/tituloRegistrar" />
         <activity android:name=".ListaEventosActivity" />
-        <activity android:name=".ListRecyclerEventos"></activity>
+        <activity android:name=".ListRecyclerEvent"></activity>
     </application>
 
 </manifest>
