@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         u.setSenha(userpass.getText().toString());
         bd = new BDUtilLogin(this);
         if (bd.Auth(u) != null){
-            Intent intencao = new Intent(this, ListaEventosActivity.class);
+            Intent intencao = new Intent(this, ListRecyclerEvent.class);
             startActivity(intencao);
         }else{
             message(view,"Erro ao logar");
