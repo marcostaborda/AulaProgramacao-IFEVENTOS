@@ -19,7 +19,6 @@ public class ListRecyclerEvent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_recycler_eventos);
-        eventList = new ArrayList<>();
 
         recycler = (RecyclerView) findViewById(R.id.recyclerView);
         recycler.setHasFixedSize(true);
