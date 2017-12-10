@@ -11,7 +11,7 @@ import java.util.List;
 public class Event implements Serializable {
     private int id;
     private String name;
-    private int img;
+    private String img;
     private String url;
 
     public static final Event[] eventos = {
@@ -26,7 +26,7 @@ public class Event implements Serializable {
             return e;
     }
 
-    public Event(String name, int img, String url){
+    public Event(String name, String img, String url){
         this.setName(name);
         this.setImg(img);
         this.setUrl(url);
@@ -40,11 +40,11 @@ public class Event implements Serializable {
         this.name = name;
     }
 
-    public int getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
     }
 
