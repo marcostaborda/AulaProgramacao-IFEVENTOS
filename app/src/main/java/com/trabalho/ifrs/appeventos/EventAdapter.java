@@ -15,8 +15,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import retrofit2.Callback;
-
 /**
  * Created by marcos on 09/12/2017.
  * Adapter e ViewHolder
@@ -60,9 +58,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     public void entrarEvento(View v,Event event){
         message(v, (event.getName()));
-       // Intent intencao = new Intent(v.getContext(), EventFragmentList.class);
-        //intencao.putExtra("event", event);
-       // v.getContext().startActivity(intencao);
+        Intent intencao = new Intent(v.getContext(), EventDashboardActivity.class);
+        intencao.putExtra("event", event);
+        v.getContext().startActivity(intencao);
     }
 
     @Override

@@ -13,6 +13,7 @@ public class Event implements Serializable {
     public String img;
     public int img1;
     public String url;
+    public String sobre;
 
     public static final List<Event> events() {
             String nameUrlRest = new Object(){}.getClass().getEnclosingMethod().getName();

@@ -25,7 +25,10 @@
             android:name=".RegisterLogin"
             android:label="@string/tituloRegistrar" />
         <activity android:name=".ListRecyclerEvent" />
-        <activity android:name=".EventActivity"></activity>
+        <activity
+            android:name=".EventDashboardActivity"
+            android:label="@string/title_activity_event_about"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
