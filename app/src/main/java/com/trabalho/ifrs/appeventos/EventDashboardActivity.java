@@ -4,14 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class EventDashboardActivity extends Activity{
-    Fragment fragmentUm = new EventAboutFragment();
+public class EventDashboardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +19,7 @@ public class EventDashboardActivity extends Activity{
         TextView title1 = (TextView) findViewById(R.id.txtTitle);
         title1.setText("Evento - "+event.getName());
         setEvent(event);
+
         //title.setText("Evento - "+event.getName());
         //Picasso.with(this).load(event.getImg()).into((ImageView) findViewById(R.id.eventImgAbout));
 
@@ -79,6 +78,5 @@ public class EventDashboardActivity extends Activity{
             }
         });
     }
-    public interface Communicator{ public void event(Event e); }
 
 }
