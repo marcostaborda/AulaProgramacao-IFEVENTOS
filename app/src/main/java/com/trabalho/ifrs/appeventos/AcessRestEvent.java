@@ -14,9 +14,9 @@ import retrofit2.http.Path;
 
 public interface AcessRestEvent {
 
-    @GET("/events")
+    @GET("events")
     Call<List<Event>> getEvents();
     public static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://localhost:8080/ServicoREST/rest/")
+            .baseUrl("http://10.0.2.2:8080/ServicoREST/rest/")
             .addConverterFactory(GsonConverterFactory.create()).build();
 }

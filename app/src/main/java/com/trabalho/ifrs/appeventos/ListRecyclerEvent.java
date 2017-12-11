@@ -36,6 +36,7 @@ public class ListRecyclerEvent extends AppCompatActivity {
         dialog.setCancelable(false);
         dialog.show();
 
+
         callEvent.enqueue(new Callback<List<Event>>() {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
@@ -44,6 +45,8 @@ public class ListRecyclerEvent extends AppCompatActivity {
                 int statusCode = response.code();
                 if (statusCode == 200){
                     List<Event> listaEvents = response.body();
+                    EventAdapter adapter = new EventAdapter(listaEvents);
+                    recycler.setAdapter(adapter);
                     for(Event e : listaEvents){
                         Log.d("Evento:", e.toString());
                     }
@@ -57,11 +60,9 @@ public class ListRecyclerEvent extends AppCompatActivity {
                 Log.d("Evento:", t.toString());
             }
         });
+
         eventList = Event.eventsLocal();
-        EventAdapter adapter = new EventAdapter(this,eventList);
-        if (dialog.isShowing())
-            dialog.dismiss();
-        recycler.setAdapter(adapter);
+
 
 
     }

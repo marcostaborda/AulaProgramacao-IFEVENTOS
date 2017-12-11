@@ -23,17 +23,15 @@ import retrofit2.Callback;
  */
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
-    private Context contexto;
     private List<Event> eventsList;
 
-    public EventAdapter(Context contexto, List<Event> eventsList) {
-        this.contexto = contexto;
+    public EventAdapter(List<Event> eventsList) {
         this.eventsList = eventsList;
     }
 
     @Override
     public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(contexto);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.layout_card_events,null);
         return new EventViewHolder(view);
     }
@@ -44,8 +42,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
         holder.textTitleEvent.setText(event.getName());
         holder.textDescEvent.setText(event.getUrl());
-
-        Picasso.with(contexto).load(event.img1).into(holder.imageEvent);
+        Context context = holder.imageEvent.getContext();
+        Picasso.with(context).load(event.getImg()).into(holder.imageEvent);
 
         holder.btnEntrar.setOnClickListener(new View.OnClickListener() {
              @Override
