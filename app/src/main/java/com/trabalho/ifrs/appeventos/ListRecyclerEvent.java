@@ -44,12 +44,9 @@ public class ListRecyclerEvent extends AppCompatActivity {
                     dialog.dismiss();
                 int statusCode = response.code();
                 if (statusCode == 200){
-                    List<Event> listaEvents = response.body();
-                    EventAdapter adapter = new EventAdapter(listaEvents);
+                    eventList = response.body();
+                    EventAdapter adapter = new EventAdapter(eventList);
                     recycler.setAdapter(adapter);
-                    for(Event e : listaEvents){
-                        Log.d("Evento:", e.toString());
-                    }
                 }
             }
 
@@ -60,11 +57,6 @@ public class ListRecyclerEvent extends AppCompatActivity {
                 Log.d("Evento:", t.toString());
             }
         });
-
-        eventList = Event.eventsLocal();
-
-
-
     }
 
 }
