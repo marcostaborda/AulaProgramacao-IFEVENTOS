@@ -60,8 +60,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     public void entrarEvento(View v,Event event){
         message(v, (event.getName()));
-        //Intent intencao = new Intent(this, ListRecyclerEvent.class);
-        //startActivity(intencao);
+        Intent intencao = new Intent(v.getContext(), EventFragmentList.class);
+        intencao.putExtra("event", event);
+        v.getContext().startActivity(intencao);
     }
 
     @Override

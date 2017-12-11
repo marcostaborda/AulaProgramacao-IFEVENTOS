@@ -24,7 +24,9 @@ public class EventFragmentList extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ArrayAdapter<Event> adapter = new ArrayAdapter<Event>(inflater.getContext(), android.R.layout.simple_list_item_1, Event.events());
+        Bundle args = getActivity().getIntent().getExtras();
+        //Event event = (Event) args.getString("event");
+        ArrayAdapter<Event> adapter = new ArrayAdapter<Event>(inflater.getContext(), android.R.layout.simple_list_item_1, Event.eventsLocal());
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);
     }
