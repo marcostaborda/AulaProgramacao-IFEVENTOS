@@ -1,41 +1,69 @@
 package com.trabalho.ifrs.appeventos;
 
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListRecyclerEvent extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    private RecyclerView recycler = (RecyclerView) findViewById(R.id.recyclerView);
-    Context mcontext;
-    private static final String URL_eventos = "http://localhost:8080/ServicoREST/rest/events";
+public class ListRecyclerEvent extends AppCompatActivity {
+    ProgressDialog dialog;
+    private RecyclerView recycler;
     List<Event> eventList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list_recycler_eventos);
+        recycler = findViewById(R.id.recyclerView);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
         eventList = new ArrayList<>();
-        EventAdapter adapter = new EventAdapter(this, EventService.events());
 
+        AcessRestEvent acess = AcessRestEvent.retrofit.create(AcessRestEvent.class);
+        final Call<List<Event>> callEvent = acess.getEvents();
+
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Carregando...");
+        dialog.setCancelable(false);
+        dialog.show();
+
+        callEvent.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+                int statusCode = response.code();
+                if (statusCode == 200){
+                    List<Event> listaEvents = response.body();
+                    for(Event e : listaEvents){
+                        Log.d("Evento:", e.toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+                Log.d("Evento:", t.toString());
+            }
+        });
+        eventList = Event.eventsLocal();
+        EventAdapter adapter = new EventAdapter(this,eventList);
+        if (dialog.isShowing())
+            dialog.dismiss();
         recycler.setAdapter(adapter);
+
+
     }
 
 }

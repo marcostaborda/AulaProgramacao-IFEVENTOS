@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import retrofit2.Callback;
+
 /**
  * Created by marcos on 09/12/2017.
  * Adapter e ViewHolder
@@ -43,7 +45,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.textTitleEvent.setText(event.getName());
         holder.textDescEvent.setText(event.getUrl());
 
-        Picasso.with(contexto).load(event.getImg()).into(holder.imageEvent);
+        Picasso.with(contexto).load(event.img1).into(holder.imageEvent);
 
         holder.btnEntrar.setOnClickListener(new View.OnClickListener() {
              @Override
