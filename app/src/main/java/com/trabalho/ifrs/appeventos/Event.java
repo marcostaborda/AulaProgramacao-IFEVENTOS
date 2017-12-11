@@ -30,6 +30,7 @@ public class Event implements Serializable {
         e.add(new Event(2,"ChimaCode", R.drawable.chimacode, "http://chimacode.xyz/"));
         return e;
     }
+
     public Event(int id, String name, String img, String url){
         this.setId(id);
         this.setName(name);

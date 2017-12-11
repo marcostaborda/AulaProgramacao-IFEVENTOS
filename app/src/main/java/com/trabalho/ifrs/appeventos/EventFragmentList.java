@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +27,9 @@ public class EventFragmentList extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Bundle args = getActivity().getIntent().getExtras();
-        //Event event = (Event) args.getString("event");
+        ArrayList<String> event =  args.getStringArrayList("event");
+
+
         ArrayAdapter<Event> adapter = new ArrayAdapter<Event>(inflater.getContext(), android.R.layout.simple_list_item_1, Event.eventsLocal());
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);
