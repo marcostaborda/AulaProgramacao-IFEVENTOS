@@ -42,7 +42,9 @@ public class EventDashboardActivity extends Activity {
         cardSobre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(EventDashboardActivity.this, "Não temos agenda", Toast.LENGTH_SHORT).show();
+                Intent intencao = new Intent(view.getContext(), AboutActivity.class);
+                intencao.putExtra("event", e);
+                view.getContext().startActivity(intencao);
             }
         });
         cardSite.setOnClickListener(new View.OnClickListener() {

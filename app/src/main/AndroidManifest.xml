@@ -28,7 +28,8 @@
         <activity
             android:name=".EventDashboardActivity"
             android:label="@string/title_activity_event_about"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>
