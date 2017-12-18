@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.trabalho.ifrs.appeventos">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +24,12 @@
         <activity
             android:name=".RegisterLogin"
             android:label="@string/tituloRegistrar" />
-        <activity android:name=".ListaEventosActivity"></activity>
+        <activity android:name=".ListRecyclerEvent" />
+        <activity
+            android:name=".EventDashboardActivity"
+            android:label="@string/title_activity_event_about"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>

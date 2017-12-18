@@ -9,6 +9,7 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="voltar">Voltar</string>
     <string name="site">Ver Site</string>
+    <string name="entrar">Entrar</string>
     <string name="eventName">Nome Evento</string>
     <string name="descImg">ImgEvento</string>
     <string name="tituloRegistrar">IFRS Eventos - Registrar </string>
@@ -18,4 +19,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_event_about">EventAboutActivity</string>
 </resources>
